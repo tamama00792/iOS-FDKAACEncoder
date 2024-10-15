@@ -31,10 +31,12 @@ extern "C" {
 
 class AudioEncoder {
 private:
+    // 描述音频格式的结构体
 	AVFormatContext *avFormatContext;
 	AVCodecContext *avCodecContext;
 	AVStream* audioStream;
 
+    // 是否成功写入头文件信息
 	bool isWriteHeaderSuccess;
 	double duration;
 
@@ -48,8 +50,11 @@ private:
 	uint8_t *swrBuffer;
 	int swrBufferSize;
 
+    // 发布的比特率
 	int publishBitRate;
+    // 声道数
 	int audioChannels;
+    // 采样率
 	int audioSampleRate;
 
 	int totalSWRTimeMills;
